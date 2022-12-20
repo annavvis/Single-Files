@@ -1,93 +1,18 @@
-// // Task:
-// // Write a function that receives two sequences: A and B of integers and returns one sequence C. Sequence C should contain all elements from sequence A (maintaining the order) except those, that are present in sequence B p times, where p is a prime number.
+const sequences = (seq1: number[], seq2: number[]) => {
 
-// // Example:
-// // A=[2,3,9,2,5,1,3,7,10] 
-// // B=[2,1,3,4,3,10,6,6,1,7,10,10,10] 
+    const count = {};
 
-// // C=[2,9,2,5,7,10] 
-
-// // checking if the number is a prime number
-
-// const isPrime = (number: number): boolean => {
-//     if (number <= 1) {
-//         return false;
-//     } else {
-//         for (let i = 2; i < number; i++) {
-//             if (number % i == 0) {
-//                 return false;
-//             }
-//         } return true;
-//     }
-// }
-
-
-// // checking an array for prime numbers
-
-// let A=[2,3,9,2,5,1,3,7,10];
-
-// A.forEach((el) => {
-//     const checkPrimeNumber = isPrime(el);
-
-//     if (checkPrimeNumber) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// });
-
-
-
-// // counting how many duplicates are in an Array
-
-// // let count = {};
-
-// // A.forEach ((el) => {
-// //     count[el] = (count[el] || 0 ) + 1
-// // });
-
-
-
-// // finding duplicates in two arrays
-
-// let B=[2,1,3,4,3,10,6,6,1,7,10,10,10]; 
-
-// const findDuplicates = A.filter(el => B.includes(el));
-
-
-// // sum two arrays
-
-// let sum = A.concat(B);
-
-// // how many duplicates in summed array
-
-// let count = {};
-
-// sum.forEach ((el) => {
-//     count[el] = (count[el] || 0 ) + 1
-// });
-
-
-
-// // pushing to new array if repeated times is prime number
-
-// let C = []
-
-// const combined = (el: number ) => {
-//     if (Object.values(count) = isPrime) {
-//         C.push(el);
-//     } else {
-//         return false;
-//     }
-// }
-
-// const values = Object.values(count);
-// const keys = Object.keys(count);
-
-// values.forEach((el) => { 
-//     if (el = isPrime) {
-//         C.push(el);
-//     } else {
-//         return false;
-//     }
-// })
+    for (const el of seq2) {
+      count[el] = (count[el] || 0) + 1;
+    }
+  
+    const isPrimeNum = (num: number) => {
+      for (let i = 2; i < num; i++) {
+        if (num % i === 0) return false;
+      }
+      return num > 1;
+    };
+    
+    const primeOccurs = seq2.filter(el => isPrimeNum(count[el]));
+    return seq1.filter(el => !primeOccurs.includes(el))
+  };

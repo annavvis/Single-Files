@@ -56,3 +56,9 @@ let B=[2,1,3,4,3,10,6,6,1,7,10,10,10];
 
 const findDuplicates = A.filter(el => B.includes(el));
 
+
+
+
+// sum two arrays
+
+let sum = A.concat(B);

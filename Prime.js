@@ -1,11 +1,27 @@
 // Task:
-// Write a function that receives two sequences: A and B of integers and returns one sequence C. Sequence C should contain all elements from sequence A (maintaining the order) except those, that are present in sequence B p times, where p is a prime number.
+// Write a function that receives two sequences: A and B of integers and returns one sequence C. 
+//Sequence C should contain all elements from sequence A (maintaining the order) except those, 
+//that are present in sequence B p times, where p is a prime number.
 
 // Example:
-// A=[2,3,9,2,5,1,3,7,10] 
-// B=[2,1,3,4,3,10,6,6,1,7,10,10,10] 
+let A=[2,3,9,2,5,1,3,7,10] 
+let B=[2,1,3,4,3,10,6,6,1,7,10,10,10] 
 
 // C=[2,9,2,5,7,10] 
+
+
+
+let count = {};
+
+B.forEach ((el) => {
+    count[el] = (count[el] || 0 ) + 1
+});
+
+
+// {1: 2, 2: 1, 3: 2, 4: 1, 6: 2, 7: 1, 10: 4}
+
+
+
 
 // checking if the number is a prime number
 
@@ -24,7 +40,7 @@ const isPrime = (number) => {
 
 // checking an array for prime numbers
 
-let A=[2,3,9,2,5,1,3,7,10];
+// let A=[2,3,9,2,5,1,3,7,10];
 
 A.forEach((el) => {
     const checkPrimeNumber = isPrime(el);
@@ -50,7 +66,7 @@ A.forEach((el) => {
 
 // finding duplicates in two arrays
 
-let B=[2,1,3,4,3,10,6,6,1,7,10,10,10]; 
+// let B=[2,1,3,4,3,10,6,6,1,7,10,10,10]; 
 
 const findDuplicates = A.filter(el => B.includes(el));
 
@@ -61,11 +77,11 @@ let sum = A.concat(B);
 
 // how many duplicates in summed array
 
-let count = {};
+// let count = {};
 
-sum.forEach ((el) => {
-    count[el] = (count[el] || 0 ) + 1
-});
+// sum.forEach ((el) => {
+//     count[el] = (count[el] || 0 ) + 1
+// });
 
 
 

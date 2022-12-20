@@ -8,11 +8,6 @@
 
 // C=[2,9,2,5,7,10] 
 
-
-
-A=[2,3,9,2,5,1,3,7,10];
-B=[2,1,3,4,3,10,6,6,1,7,10,10,10];
-
 // checking if the number is a prime number
 
 const isPrime = (number) => {
@@ -26,3 +21,18 @@ const isPrime = (number) => {
         } return true;
     }
 }
+
+
+// checking an array for prime numbers
+
+let A=[2,3,9,2,5,1,3,7,10];
+
+A.forEach((el) => {
+    const checkPrimeNumber = isPrime(el);
+
+    if (checkPrimeNumber) {
+        return true;
+    } else {
+        return false;
+    }
+})

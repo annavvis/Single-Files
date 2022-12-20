@@ -9,7 +9,7 @@
 
 // checking if the number is a prime number
 
-const isPrime = (number) => {
+const isPrime = (number: number): boolean => {
     if (number <= 1) {
         return false;
     } else {
@@ -73,7 +73,7 @@ sum.forEach ((el) => {
 
 let C = []
 
-const combined = (el) => {
+const combined = (el: number ) => {
     if (Object.values(count) = isPrime) {
         C.push(el);
     } else {

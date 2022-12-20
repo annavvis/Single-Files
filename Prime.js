@@ -41,12 +41,11 @@ A.forEach((el) => {
 
 // counting how many duplicates are in an Array
 
-let count = {};
+// let count = {};
 
-A.forEach ((el) => {
-    count[el] = (count[el] || 0 ) + 1
-});
-
+// A.forEach ((el) => {
+//     count[el] = (count[el] || 0 ) + 1
+// });
 
 
 
@@ -57,8 +56,28 @@ let B=[2,1,3,4,3,10,6,6,1,7,10,10,10];
 const findDuplicates = A.filter(el => B.includes(el));
 
 
-
-
 // sum two arrays
 
 let sum = A.concat(B);
+
+// how many duplicates in summed array
+
+let count = {};
+
+sum.forEach ((el) => {
+    count[el] = (count[el] || 0 ) + 1
+});
+
+
+
+// pushing to new array if repeated times is prime number
+
+let C = []
+
+const combined = (el) => {
+    if (Object.values(count) = isPrime(el)) {
+        C.push(el);
+    } else {
+        return false;
+    }
+}

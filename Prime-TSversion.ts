@@ -8,14 +8,24 @@ const sequences = (seq1: number[], seq2: number[]): number[] => {
     for (const el of seq2) {
       count[el] = (count[el] || 0) + 1;
     }
-  
+
     const isPrimeNum = (num: number) :boolean => {
-      for (let i = 2; i < num; i++) {
-        if (num % i === 0) return false;
-      }
-      return num > 1;
-    };
-    
+    if (num <= 1) {
+        return false;
+    } else {
+        for (let i = 2; i < num; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        } return true;
+    }
+}
+    // {
+    //     2: 1
+    // }
+    // el = 2
+    // count[2] = 1
+
     const primeOccurs = seq2.filter(el => isPrimeNum(count[el]));
     return seq1.filter(el => !primeOccurs.includes(el))
   };

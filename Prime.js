@@ -35,4 +35,19 @@ A.forEach((el) => {
     } else {
         return false;
     }
-})
+});
+
+
+
+// counting how many duplicates are in an Array
+
+let count = {};
+
+A.forEach ((el) => {
+    count[el] = (count[el] || 0 ) + 1
+});
+
+
+
+
+

@@ -75,9 +75,20 @@ sum.forEach ((el) => {
 let C = []
 
 const combined = (el) => {
-    if (Object.values(count) = isPrime(el)) {
+    if (Object.values(count) = isPrime) {
         C.push(el);
     } else {
         return false;
     }
 }
+
+const values = Object.values(count);
+const keys = Object.keys(count);
+
+values.forEach((el) => { 
+    if (el = isPrime) {
+        C.push(el);
+    } else {
+        return false;
+    }
+})

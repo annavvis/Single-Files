@@ -1,6 +1,10 @@
 const sequences = (seq1: number[], seq2: number[]): number[] => {
 
-    const count = {};
+    interface Count {
+        [key: number] : number;
+    }
+
+    const count : Count = {};
 
     for (const el of seq2) {
       count[el] = (count[el] || 0) + 1;
